@@ -1,0 +1,12 @@
+<h1 class="f1 pa2 pl3">GALLERY</h1>
+
+<div class=" flex flex-wrap">
+    {{#each pictures}}
+    <img class="w-50 b--black " src="{{this.data.image}}" alt="">
+    {{else}}
+    <p>There aren't pictures yet!</p>
+    {{/each}}
+</div>
+<div class="pa5 center" >
+    <a  class="ba avenir ph5 ma2 f3 br4 pv3  dim bg-red" href="/main">let's draw some masterpieces</a>
+</div>

@@ -43,11 +43,14 @@ app.use( express.static(publicPath))
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+app.get('/main', function(req, res, next) {
+  res.render('main');
+});
 
-app.get('/index', function(req, res, next) {
+app.get('/gallery', function(req, res, next) {
     Picture.find()
       .then(pictures => {
-        res.render('index', { pictures });
+        res.render('gallery', { pictures });
       })
       .catch(error => {
         console.log(error);
