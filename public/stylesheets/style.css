@@ -1,6 +1,63 @@
-body {
-    padding: 0;
-    margin: 0;
-    font: 14px  Helvetica, Arial, sans-serif;
-  }
- 
+* {
+  margin: 0px;
+  padding: 0px;
+  color: #eeeeee;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  text-align: center;
+  grid-template-areas:
+    "m c c c c c c c c c c c c"
+    "m c c c c c c c c c c c c"
+    "m c c c c c c c c c c c c"
+    "m c c c c c c c c c c c c"
+    "m c c c c c c c c c c c c"
+    "m c c c c c c c c c c c c"
+    "m c c c c c c c c c c c c"
+    "m c c c c c c c c c c c c"
+    "m c c c c c c c c c c c c"
+    "m c c c c c c c c c c c c"
+    "m c c c c c c c c c c c c"
+    "m c c c c c c c c c c c c"
+  ;
+
+}
+
+.menu {
+  display: grid;
+  grid-area: m;
+  height: 100%;
+  position: fixed;
+  width: 60px;
+  background-color: rosybrown;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(180deg);
+}
+
+.archive {
+  writing-mode: vertical-lr;
+  text-orientation: sideways-right;
+}
+
+.play {
+  writing-mode: vertical-lr;
+  text-orientation: sideways-right;
+}
+
+.about {
+  writing-mode: vertical-lr;
+  text-orientation: sideways-right;
+}
+
+.content {
+  grid-area: c;
+}
+
+a:link {
+  text-decoration: none;
+}
