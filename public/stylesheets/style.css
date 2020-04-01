@@ -3,34 +3,11 @@
   padding: 0px;
   color: #eeeeee;
 }
-
-.container {
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(13, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  text-align: center;
-  grid-template-areas:
-    "m c c c c c c c c c c c c"
-    "m c c c c c c c c c c c c"
-    "m c c c c c c c c c c c c"
-    "m c c c c c c c c c c c c"
-    "m c c c c c c c c c c c c"
-    "m c c c c c c c c c c c c"
-    "m c c c c c c c c c c c c"
-    "m c c c c c c c c c c c c"
-    "m c c c c c c c c c c c c"
-    "m c c c c c c c c c c c c"
-    "m c c c c c c c c c c c c"
-    "m c c c c c c c c c c c c"
-  ;
-
-}
-
+/*navbar FALTA MOBILE FIRST*/
 .menu {
   display: grid;
-  grid-area: m;
   height: 100%;
+  grid-area: m;
   position: fixed;
   width: 60px;
   background-color: rosybrown;
@@ -41,21 +18,63 @@
 
 .archive {
   writing-mode: vertical-lr;
-  text-orientation: sideways-right;
 }
 
 .play {
   writing-mode: vertical-lr;
-  text-orientation: sideways-right;
 }
 
 .about {
   writing-mode: vertical-lr;
-  text-orientation: sideways-right;
 }
 
-.content {
-  grid-area: c;
+
+/*main page*/
+.main-page {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin-top: 35px;
+}
+
+.sketch {
+  margin-top: 45px;
+}
+
+.saveButton {
+  margin-top: 30px;
+  width: 200px;
+}
+
+/*gallery*/
+.images-gallery {
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.image {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.title-archive {
+  color: #000000;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container-archive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  margin-left: 120px;
 }
 
 a:link {

@@ -25,7 +25,7 @@ let y = 1
 function setup(){
 
 
-    cnv = createCanvas(600, 600).parent("#mySketch");
+    cnv = createCanvas(550, 550).parent("#mySketch");
     angleMode(DEGREES);
     video = createCapture(VIDEO);
     poseNet = ml5.poseNet(video, modelReady);
