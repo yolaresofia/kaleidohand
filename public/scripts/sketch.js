@@ -19,13 +19,13 @@ let easing = 0.05;
 
 let x = 1
 let y = 1
-
-
+let sliderSymmetry;
+let strokeSize;
 
 function setup(){
 
 
-    cnv = createCanvas(550, 550).parent("#mySketch");
+    cnv = createCanvas(600, 600).parent("#mySketch");
     angleMode(DEGREES);
     video = createCapture(VIDEO);
     poseNet = ml5.poseNet(video, modelReady);
@@ -37,17 +37,22 @@ function setup(){
 
     submitButton = select("#submitButton");
     submitButton.mousePressed(handleSubmit);
+    sliderSymmetry = createSlider(4, 12, 6, 1)
+    sliderSymmetry.style('width', '80px');
+    sliderSymmetry.parent("#mySketch")
 
-    
-
-    
+    strokeSize = createSlider(2, 40, 10, 1)
+    strokeSize.style('width', '80px');
+    strokeSize.parent("#mySketch")
 }
+
 function modelReady() {
     console.log("model ready");
 }
 function draw(){
     background(220,0.4);
     drawKeypoints();
+    symmetry = sliderSymmetry.value()
 }
 
 function drawKeypoints() {
@@ -85,7 +90,7 @@ function drawKeypoints() {
         for (let i = 0; i < symmetry; i++) {
             rotate(angle);
             stroke(random(255), random(255), random(255))
-            strokeWeight(random(10));
+            strokeWeight(random(strokeSize.value()));
 
             line(mx, my, pmx, pmy);
             push();
@@ -117,7 +122,6 @@ function handleSubmit(e){
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
-            // "Content-Type": "application/x-www-form-urlencoded",
         },
         body: JSON.stringify(output)
     }
@@ -127,6 +131,7 @@ function handleSubmit(e){
     })
 
 }
+
 
 
 
