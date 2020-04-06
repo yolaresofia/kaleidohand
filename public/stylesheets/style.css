@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
 * {
   margin: 0px;
   padding: 0px;
@@ -7,7 +10,6 @@
 .menu {
   display: grid;
   height: 100%;
-  grid-area: m;
   position: fixed;
   width: 60px;
   background-color: rosybrown;
@@ -18,14 +20,17 @@
 
 .archive {
   writing-mode: vertical-lr;
+  font-family: Gruppo;
 }
 
 .play {
   writing-mode: vertical-lr;
+  font-family: Gruppo;
 }
 
 .about {
   writing-mode: vertical-lr;
+  font-family: Gruppo;
 }
 
 
@@ -39,6 +44,8 @@
 
 .title {
   margin-top: 35px;
+  font-family: Fira Code;
+  color: black;
 }
 
 .sketch {
@@ -48,6 +55,7 @@
 .saveButton {
   margin-top: 30px;
   width: 200px;
+  color: black;
 }
 
 /*gallery*/
