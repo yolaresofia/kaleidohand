@@ -4,7 +4,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  color: #eeeeee;
+  color: #000000;
 }
 /*navbar FALTA MOBILE FIRST*/
 .menu {
@@ -49,12 +49,12 @@
 }
 
 .sketch {
-  margin-top: 45px;
+  margin-top: 15px;
 }
 
 .saveButton {
-  margin-top: 30px;
-  width: 200px;
+  
+  padding: 10px 50px;
   color: black;
 }
 

@@ -94,13 +94,13 @@ router.get('/login', (req, res, next) => {
       }
   
       req.session.currentUser = theUser;
-      res.redirect('/');
+      res.redirect('/main');
     });
   });
 
   router.get('/logout', (req, res, next) => {
     if (!req.session.currentUser) {
-      res.redirect('/');
+      res.redirect('/main');
       return;
     }
   
@@ -110,7 +110,7 @@ router.get('/login', (req, res, next) => {
         return;
       }
   
-      res.redirect('/');
+      res.redirect('/main');
     });
   });
     

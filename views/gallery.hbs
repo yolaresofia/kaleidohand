@@ -2,7 +2,7 @@
     <div class='container-archive'>
         <div class="images-gallery">
             {{#each pictures}}
-            <img src="{{this.data.image}}" class="image" alt="">
+            <a href="/gallery/{{this._id}}"><img src="{{this.data.image}}" class="image" alt=""></a>
             {{else}}
             <p>There aren't pictures yet!</p>
             {{/each}}

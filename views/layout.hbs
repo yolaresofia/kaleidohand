@@ -4,17 +4,22 @@
 <head>
   <title>{{title}}</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
-
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
 </head>
 
 <body>
   <div>
     <div class="menu">
-      <a href="/gallery" class='archive'>] }    ARCHIVE    { [</a>
+      <a href="/gallery" class='archive'>] } ARCHIVE { [</a>
       <a href="/main" class='play'>PLAYDRAWEXPERIMENT</a>
-      <a href="#" class='about'>] }    ABOUT    { [</a>
+      <a href="#" class='about'>] } ABOUT { [</a>
+      {{#if isUserLoggedIn}}
+      <a href="/personal/profile">profile</a>
+      <a href="/auth/logout">LOGOUT</a>
+      {{else}}
       <a href="/auth/login">LOGIN</a>
       <a href="/auth/signup">SIGNUP</a>
+      {{/if}}
     </div>
   </div>
   {{{body}}}

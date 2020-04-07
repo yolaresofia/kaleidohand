@@ -14,8 +14,9 @@ const app = express()
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-const authRoutes = require('./routes/auth');
+const authRouter = require('./routes/auth');
 const indexRouter = require('./routes/index');
+const personalRouter = require('./routes/personal')
 
 
 
@@ -39,7 +40,7 @@ mongoose
     secret: 'kaleidoscope',
     resave: true,
     saveUninitialized: true,
-    cookie: { maxAge: 60000 },
+    cookie: { maxAge: 6000000 },
     store: new MongoStore({
       url: 'mongodb+srv://milton:mileteas123@cluster0-lduwt.mongodb.net/test?retryWrites=true&w=majority',
       ttl: 24 * 60 * 60 // 1 day
@@ -74,9 +75,16 @@ app.use( express.static(publicPath))
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-//middleware setup
+//MIDDLEWARE SETUP
+app.use(cookieParser());
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use('/', indexRouter);
-app.use('/auth', authRoutes);
+app.use('/auth', authRouter);
+app.use('/personal', personalRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
