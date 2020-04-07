@@ -8,9 +8,16 @@ const logger = require('morgan');
 const path = require('path');
 const mongoose = require('mongoose');
 
-const Picture = require('./models/picture.js');
+//const Picture = require('./models/picture.js');
 
 const app = express()
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
+const authRouter = require('./routes/auth');
+const indexRouter = require('./routes/index');
+const personalRouter = require('./routes/personal')
+
 
 
 mongoose
@@ -28,6 +35,31 @@ mongoose
   });
 
 
+    
+  app.use(session({
+    secret: 'kaleidoscope',
+    resave: true,
+    saveUninitialized: true,
+    cookie: { maxAge: 6000000 },
+    store: new MongoStore({
+      url: 'mongodb+srv://milton:mileteas123@cluster0-lduwt.mongodb.net/test?retryWrites=true&w=majority',
+      ttl: 24 * 60 * 60 // 1 day
+    })
+  }));
+  
+  app.use((req, res, next) => {
+    if (req.session.currentUser) {
+      res.locals.currentUserInfo = req.session.currentUser;
+      res.locals.isUserLoggedIn = true;
+    } else {
+      res.locals.isUserLoggedIn = false;
+    }
+  
+    next();
+  });
+
+
+
 // add logging middleware
 app.use(logger("dev"))
 
@@ -43,37 +75,15 @@ app.use( express.static(publicPath))
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-app.get('/main', function(req, res, next) {
-  res.render('main');
-});
+//MIDDLEWARE SETUP
+app.use(cookieParser());
 
-app.get('/gallery', function(req, res, next) {
-    Picture.find()
-      .then(pictures => {
-        res.render('gallery', { pictures });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  });
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-
-app.post("/api", (req, res) => {
-    // our unix timestamp
-    const unixTimeCreated = new Date().getTime();
-    // add our unix time as a "created" property and add it to our request.body
-    const newData = Object.assign({"created": unixTimeCreated}, req.body)
-
-    // add in our data object to our database using .insert()
-    Picture.create({data:newData})
-    .then(() => {
-      res.redirect('/');
-    })
-    .catch(error => {
-      console.log(error);
-    });
-
-})
+app.use('/', indexRouter);
+app.use('/auth', authRouter);
+app.use('/personal', personalRouter);
 
 
 // catch 404 and forward to error handler

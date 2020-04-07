@@ -1,12 +1,12 @@
-<h1 class="f1 pa2 pl3">GALLERY</h1>
 
-<div class=" flex flex-wrap">
-    {{#each pictures}}
-    <img class="w-50 b--black " src="{{this.data.image}}" alt="">
-    {{else}}
-    <p>There aren't pictures yet!</p>
-    {{/each}}
-</div>
-<div class="pa5 center" >
-    <a  class="ba avenir ph5 ma2 f3 br4 pv3  dim bg-red" href="/main">Let's Draw Some Masterpieces!</a>
-</div>
+    <h1 class="title-archive">ARCHIVE</h1>
+    <div class='container-archive'>
+        <div class="images-gallery">
+            {{#each pictures}}
+            <a href="/gallery/{{this._id}}"><img src="{{this.data.image}}" class="image" alt=""></a>
+            {{else}}
+            <p>There aren't pictures yet!</p>
+            {{/each}}
+        </div>
+    </div>
+    

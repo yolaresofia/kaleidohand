@@ -25,7 +25,7 @@ let strokeSize;
 function setup(){
 
 
-    cnv = createCanvas(600, 600).parent("#mySketch");
+    cnv = createCanvas(550, 550).parent("#mySketch");
     angleMode(DEGREES);
     video = createCapture(VIDEO);
     poseNet = ml5.poseNet(video, modelReady);
@@ -116,7 +116,7 @@ function handleSubmit(e){
     const last_img = get()
     output.image = last_img.canvas.toDataURL()
 
-    console.log(last_img)
+   // console.log(last_img)
 
     const options = {
         method: 'POST',
@@ -125,12 +125,13 @@ function handleSubmit(e){
         },
         body: JSON.stringify(output)
     }
-    fetch(`/api`, options).then(result => {
+    fetch('/api', options).then(result => {
 
-        console.log('success')
-    })
+        console.log('success');
+    });
 
 }
+
 
 
 
