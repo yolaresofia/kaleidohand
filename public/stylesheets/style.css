@@ -1,6 +1,90 @@
-body {
-    padding: 0;
-    margin: 0;
-    font: 14px  Helvetica, Arial, sans-serif;
-  }
- 
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  color: #000000;
+}
+/*navbar FALTA MOBILE FIRST*/
+.menu {
+  display: grid;
+  height: 100%;
+  position: fixed;
+  width: 60px;
+  background-color: rosybrown;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(180deg);
+}
+
+.archive {
+  writing-mode: vertical-lr;
+  font-family: Gruppo;
+}
+
+.play {
+  writing-mode: vertical-lr;
+  font-family: Gruppo;
+}
+
+.about {
+  writing-mode: vertical-lr;
+  font-family: Gruppo;
+}
+
+
+/*main page*/
+.main-page {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin-top: 35px;
+  font-family: Fira Code;
+  color: black;
+}
+
+.sketch {
+  margin-top: 15px;
+}
+
+.saveButton {
+  
+  padding: 10px 50px;
+  color: black;
+}
+
+/*gallery*/
+.images-gallery {
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.image {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.title-archive {
+  color: #000000;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container-archive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  margin-left: 120px;
+}
+
+a:link {
+  text-decoration: none;
+}
