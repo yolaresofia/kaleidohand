@@ -38,15 +38,15 @@ function setup(){
     submitButton.mousePressed(handleSubmit);
     sliderSymmetry = createSlider(4, 12, 6, 1)
     sliderSymmetry.style('width', '80px');
-    sliderSymmetry.parent("#mySketch")
+    sliderSymmetry.parent("#knobs")
 
     strokeSize = createSlider(2, 40, 10, 1)
     strokeSize.style('width', '80px');
-    strokeSize.parent("#mySketch")
+    strokeSize.parent("#knobs")
 }
 
 function modelReady() {
-    console.log("model ready");
+    console.log(".");
 }
 function draw(){
     background(220,0.4);
@@ -110,13 +110,8 @@ function handleSubmit(e){
         location: {},
         image: ''
     }
-    
-  
     const last_img = get()
     output.image = last_img.canvas.toDataURL()
-
-   // console.log(last_img)
-
     const options = {
         method: 'POST',
         headers: {
@@ -124,13 +119,16 @@ function handleSubmit(e){
         },
         body: JSON.stringify(output)
     }
-    fetch('/api', options).then(result => {
-
-        console.log('success');
-    });
-
+    fetch('/api', options)
+    .then(() => { appendSucces()})
+    .catch(err => console.log(err));
 }
 
-
+function appendSucces(){
+    let succededDiv = createDiv('Created!')
+    succededDiv.style('background-color','pink')
+    succededDiv.style('width','50px')
+    succededDiv.parent("#knobs")
+}
 
 
