@@ -8,8 +8,9 @@
 }
 /*navbar FALTA MOBILE FIRST*/
 .menu {
-  display: grid;
+  display: flex;
   height: 100%;
+  flex-direction: column;
   position: fixed;
   width: 60px;
   background-color: rosybrown;
@@ -18,19 +19,10 @@
   transform: rotate(180deg);
 }
 
-.archive {
+.txt {
   writing-mode: vertical-lr;
   font-family: Gruppo;
-}
-
-.play {
-  writing-mode: vertical-lr;
-  font-family: Gruppo;
-}
-
-.about {
-  writing-mode: vertical-lr;
-  font-family: Gruppo;
+  margin-top: 30px;
 }
 
 

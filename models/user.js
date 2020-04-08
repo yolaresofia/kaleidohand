@@ -5,6 +5,8 @@ const userSchema = new Schema({
   name: String,
   email: String,
   password: String,
+  website: String,
+  city: String
 });
 
 userSchema.set('timestamps', true);

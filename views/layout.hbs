@@ -10,15 +10,15 @@
 <body>
   <div>
     <div class="menu">
-      <a href="/gallery" class='archive'>] } ARCHIVE { [</a>
-      <a href="/main" class='play'>PLAYDRAWEXPERIMENT</a>
-      <a href="#" class='about'>] } ABOUT { [</a>
+      <a href="/gallery" class='txt'>] } ARCHIVE { [</a>
+      <a href="/main" class='txt'>PLAYDRAWEXPERIMENT</a>
+      <a href="#" class='txt'>] } ABOUT { [</a>
       {{#if isUserLoggedIn}}
-      <a href="/personal/profile">profile</a>
-      <a href="/auth/logout">LOGOUT</a>
+      <a href="/personal/profile" class="txt">PROFILE</a>
+      <a href="/auth/logout" class="txt">LOGOUT</a>
       {{else}}
-      <a href="/auth/login">LOGIN</a>
-      <a href="/auth/signup">SIGNUP</a>
+      <a href="/auth/login" class="txt">LOGIN</a>
+      <a href="/auth/signup" class="txt">SIGNUP</a>
       {{/if}}
     </div>
   </div>
