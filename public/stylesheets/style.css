@@ -77,6 +77,15 @@
   margin-left: 120px;
 }
 
+#sketchAndKnobs{
+  display: flex;
+  flex-direction: row;
+}
+#knobs{
+  display: flex;
+  flex-direction: column;
+}
+
 a:link {
   text-decoration: none;
 }

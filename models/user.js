@@ -6,7 +6,8 @@ const userSchema = new Schema({
   email: String,
   password: String,
   website: String,
-  city: String
+  city: String,
+  pictures: [{ type: Schema.Types.ObjectId, ref: 'Picture' }]
 });
 
 userSchema.set('timestamps', true);

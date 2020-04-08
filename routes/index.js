@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Picture = require('../models/picture.js');
-
+const User = require('../models/user');
 
 router.get('/main', function (req, res, next) {
   res.render('main');
@@ -41,8 +41,18 @@ router.post("/api", (req, res) => {
     });
 })
 
+router.get('/profiles/:id', function (req, res, next) {
+  Picture.find({user: req.params.id})
+    .populate('user')
+    .then(pictures => { 
+      let {name, website, city, email} = pictures[0].user;
+      res.render('profiles', { pictures, name, email, city, website })
+    })
+    .catch(error => console.log(error));
+});
+
+
 router.get('/gallery/:id', (req, res, next) => {
-  console.log(req.params.id);
     Picture.findById(req.params.id)
     .populate('user', 'name')
     .then(picture => {

@@ -14,9 +14,7 @@ router.use((req, res, next) => {
 });
 
 router.get('/profile', function (req, res, next) {
-  let query = {
-    user: req.session.currentUser._id
-  }
+  let query = { user: req.session.currentUser._id }
   let user1;
   User.findById(req.session.currentUser._id)
     .then(user => user1 = user)
