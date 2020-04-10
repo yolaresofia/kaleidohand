@@ -13,6 +13,7 @@ router.use((req, res, next) => {
   res.redirect('/auth/login');
 });
 
+
 router.get('/profile', function (req, res, next) {
   let query = { user: req.session.currentUser._id }
   let user1;
@@ -28,19 +29,16 @@ router.get('/profile', function (req, res, next) {
 
 
 router.get('/edit', function (req, res, next) {
-  let query = {
-    user: req.session.currentUser._id
-  }
-  User.find(query)
-    .then(user => {
-      // console.log(pictures);
-      res.render('personal/edit', {
-        user
-      });
-    })
-    .catch(error => {
-      console.log(error);
-    });
+  let query = { user: req.session.currentUser._id }
+  let user1;
+  User.findById(req.session.currentUser._id)
+  .then(user => user1 = user)
+Picture.find(query)
+  .then(pictures => res.render('personal/edit', {
+    pictures,
+    user1
+  }))
+  .catch(error => console.log(error));
 });
 
 router.post('/:id/delete', (req, res, next) => {

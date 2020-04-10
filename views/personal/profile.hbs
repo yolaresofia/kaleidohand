@@ -10,8 +10,6 @@
         <div class="col mb1">
             {{#each pictures}}
             <img class="br2" src="{{this.data.image}}" class="image" alt="">
-            <form action="/personal/{{id}}/delete" method="POST">
-            <button type="submit"> Delete </button>
             </form>
             {{else}}
             <p class="f5 f4-ns fw6 dark-gray">There aren't pictures yet!</p>

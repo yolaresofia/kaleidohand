@@ -9,7 +9,6 @@ let skeletons = [];
 
 let keypoints = [];
 let prevkeypoints = [];
-let osc, reverb;
 
 let symmetry = 6;
 
@@ -43,11 +42,27 @@ function setup(){
     strokeSize = createSlider(2, 40, 10, 1)
     strokeSize.style('width', '80px');
     strokeSize.parent("#knobs")
+
+    //R
+    strokeR = createSlider(0, 250, 100, 1)
+    strokeR.style('width', '80px');
+    strokeR.parent("#knobs")
+    //G
+    strokeG = createSlider(0, 250, 10, 1)
+    strokeG.style('width', '80px');
+    strokeG.parent("#knobs")
+    //B
+    strokeB = createSlider(0, 250, 50, 1)
+    strokeB.style('width', '80px');
+    strokeB.parent("#knobs")
+
+    background(255)
 }
 
 function modelReady() {
     console.log(".");
 }
+
 function draw(){
     background(220,0.4);
     drawKeypoints();
@@ -55,7 +70,6 @@ function draw(){
 }
 
 function drawKeypoints() {
-
     if (poses.length == 0) {
         return;
     }
@@ -88,7 +102,7 @@ function drawKeypoints() {
 
         for (let i = 0; i < symmetry; i++) {
             rotate(angle);
-            stroke(random(255), random(255), random(255))
+            stroke(strokeR.value(), strokeG.value(), strokeB.value())
             strokeWeight(random(strokeSize.value()));
 
             line(mx, my, pmx, pmy);
@@ -97,7 +111,6 @@ function drawKeypoints() {
             line(mx, my, pmx, pmy);
             pop();
         }
-
     }
 }
 
@@ -121,9 +134,7 @@ function handleSubmit(e){
     }
     fetch('/api', options)
     .then(() => { appendSucces()})
-    .catch(err => {
-        console.log(err);
-    });
+    .catch(err => console.log(err));
 }
 
 function appendSucces(){
@@ -132,8 +143,11 @@ function appendSucces(){
     succededDiv.style('width','50px')
     succededDiv.parent("#knobs")
     let notLoggedIn = select('#notLogged')
-    notLoggedIn.style('display', 'inline')
+    notLoggedIn.style('display','inline')
 }
+
+
+
 
 
 
