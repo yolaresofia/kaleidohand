@@ -23,7 +23,7 @@ let strokeSize;
 function setup(){
 
 
-    cnv = createCanvas(550, 550).parent("#mySketch");
+    cnv = createCanvas(500, 500).parent("#mySketch");
     angleMode(DEGREES);
     video = createCapture(VIDEO);
     poseNet = ml5.poseNet(video, modelReady);
@@ -35,10 +35,13 @@ function setup(){
 
     submitButton = select("#submitButton");
     submitButton.mousePressed(handleSubmit);
+
+    //symmetry
     sliderSymmetry = createSlider(4, 12, 6, 1)
     sliderSymmetry.style('width', '80px');
     sliderSymmetry.parent("#knobs")
-
+    sliderSymmetry.class('input');
+    //size
     strokeSize = createSlider(2, 40, 10, 1)
     strokeSize.style('width', '80px');
     strokeSize.parent("#knobs")

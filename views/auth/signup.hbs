@@ -1,16 +1,20 @@
-<article class="pa4 pl7 black-80">
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+
+<script src="/scripts/auth-background.js"></script>
+
+<article class="pa4 pt6 black-80 fade-in">
 {{#if errorMessage}}
 <p class="error-message">
     {{ errorMessage }}
 </p>
 {{/if}}
 
-</form>
-  <form action="/auth/signup" method="post" accept-charset="utf-8">
+  <form class="measure center" action="/auth/signup" method="post" accept-charset="utf-8">
     <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
-      <legend class="ph0 mh0 fw6 clip">Sign Up</legend>
+      <legend class="f4 fw6 ph0 mh0">Signup</legend>
       <div class="mt3">
-        <label class="db fw4 lh-copy f6" for="name-input">Name</label>
+        <label class="db fw6 lh-copy f6" for="name-input">Name</label>
         <input class="pa2 input-reset ba bg-transparent w-100 measure" type="text" name="name"  id="name-input">
       </div>
       <div class="mt3">
@@ -25,8 +29,3 @@
     <div class="mt3"><input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6" type="submit" value="Sign Up"></div>
   </form>
 </article>
-
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
-<script src="/scripts/auth-background.js"></script>

@@ -3,6 +3,11 @@ const router = express.Router();
 const Picture = require('../models/picture.js');
 const User = require('../models/user');
 
+
+router.get('/', function (req, res, next) {
+  res.render('home');
+});
+
 router.get('/main', function (req, res, next) {
   res.render('main');
 });
