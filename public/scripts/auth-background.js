@@ -16,5 +16,5 @@ function setup() {
 
 function draw() {
   stroke(random(24))
- ellipse(mouseX,mouseY,random(20),random(20))
+ ellipse(mouseX,mouseY,random(50),random(50))
 }

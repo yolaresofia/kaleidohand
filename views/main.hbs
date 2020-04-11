@@ -2,11 +2,17 @@
     <div class="name-use">
         <h1 class="title">Use your<br><span>hand</span><br>to draw</h1>
     </div>
-        <div class='sketch-button'>
+    <div class='sketch-button'>
         <div id="mySketch"></div>
-        <button class="saveButton" id="submitButton">SAVE</button>
-        </div>
-        <div id="knobs"></div>
+        <button class="saveButton b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f5" id="submitButton">SAVE</button>
+    </div>
+    {{#if isUserLoggedIn}}
+    <div id="knobs"></div>
+    {{else}}
+    <p id="notLogged" style="display: none">Log in for full experience!</p>
+    {{/if}}
+    </div>
+    <div id="knobs" style="display: none"></div>
 </main>
 <!-- p5 libraries -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
