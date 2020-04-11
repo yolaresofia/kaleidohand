@@ -6,6 +6,7 @@
   padding: 0px;
   color: #000000;
 }
+
 /*navbar FALTA MOBILE FIRST*/
 .menu {
   display: grid;
@@ -53,7 +54,7 @@
 }
 
 .saveButton {
-  
+
   padding: 10px 50px;
   color: black;
 }
@@ -89,11 +90,122 @@ a:link {
   text-decoration: none;
 }
 
-#sketchAndKnobs{
+#sketchAndKnobs {
   display: flex;
   flex-direction: row;
 }
-#knobs{
+
+#knobs {
   display: flex;
   flex-direction: column;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 10;
+  left: 0;
+  transform: scale(0);
+  transform: skewX(-45);
+  transform-origin: left;
+  background: linear-gradient(302deg, #313f3c, #0d1815, #938686, #38435e);
+  background-size: 800% 800%;
+
+  -webkit-animation: grad 3s ease infinite;
+  -moz-animation: grad 3s ease infinite;
+  -o-animation: grad 3s ease infinite;
+  animation: grad 3s ease infinite;
+}
+
+@-webkit-keyframes grad {
+  0% {
+    background-position: 0% 5%
+  }
+
+  50% {
+    background-position: 100% 96%
+  }
+
+  100% {
+    background-position: 0% 5%
+  }
+}
+
+@-moz-keyframes grad {
+  0% {
+    background-position: 0% 5%
+  }
+
+  50% {
+    background-position: 100% 96%
+  }
+
+  100% {
+    background-position: 0% 5%
+  }
+}
+
+@-o-keyframes grad {
+  0% {
+    background-position: 0% 5%
+  }
+
+  50% {
+    background-position: 100% 96%
+  }
+
+  100% {
+    background-position: 0% 5%
+  }
+}
+
+@keyframes grad {
+  0% {
+    background-position: 0% 5%
+  }
+
+  50% {
+    background-position: 100% 96%
+  }
+
+  100% {
+    background-position: 0% 5%
+  }
+
+}
+
+.transition-wipe {
+  transition: .7s cubic-bezier(0, 0, .58, 1);
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+html.is-animating .transition-wipe {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+
+.transition-fade {
+  transition: 0.4s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+.fade-in{
+  animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+  from {
+    transform: scale(1.02);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
 }
