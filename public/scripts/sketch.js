@@ -19,6 +19,8 @@ let x = 1
 let y = 1
 let sliderSymmetry;
 let strokeSize;
+let knob
+let succededDiv 
 
 function setup(){
 
@@ -35,6 +37,7 @@ function setup(){
 
     submitButton = select("#submitButton");
     submitButton.mousePressed(handleSubmit);
+    knob = select('#knob')
 
     //symmetry
     sliderSymmetry = createSlider(4, 12, 6, 1)
@@ -58,7 +61,7 @@ function setup(){
     strokeB = createSlider(0, 250, 50, 1)
     strokeB.style('width', '80px');
     strokeB.parent("#knobs")
-
+    background(255)
 }
 
 function modelReady() {
@@ -141,17 +144,24 @@ function handleSubmit(e){
 }
 
 function appendSucces(){
-    let succededDiv = createDiv('Created!')
+    setTimeout(() => {
+        removeD() 
+    }, 2000);
+    
+    succededDiv = createDiv('Created!')
     succededDiv.style('background-color','pink')
     succededDiv.style('width','50px')
     succededDiv.parent("#knobs")
     let notLoggedIn = select('#notLogged')
     notLoggedIn.style('display','inline')
 
+   // notLoggedIn.style('right','300px')
 }
 
 
-
+function removeD() {
+   succededDiv.remove()
+}
 
 
 

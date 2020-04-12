@@ -385,7 +385,7 @@ html.is-animating .transition-fade {
 }
 
 .forms {
- font-family: Helvetica;
+  font-family: Helvetica;
 }
 
 /* profile */
@@ -399,38 +399,87 @@ html.is-animating .transition-fade {
 }
 
 .image:hover {
-  width: 350px;
+  width: 450px;
 }
 
-.personalSection{
+.personalSection {
   display: flex;
   flex-direction: row;
   margin-top: 50px;
 }
 
-.personalHeader{
+.personalHeader {
   display: flex;
   position: fixed;
-  width:40%;
+  width: 40%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
   margin-left: 3%;
 }
 
-.personalHeader *{
+.personalHeader * {
   padding: 10px;
   margin: 10px auto;
   font-family: Fira Code;
 }
 
-.images-profile{
+.images-profile {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-left: 40%;
   float: right;
   width: 70%;
-} 
+}
 
+/* edit profile */
+
+.personalHeader2 {
+  display: flex;
+  position: fixed;
+  width: 40%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3%;
+}
+
+.personalHeader2 * {
+  padding: 4px;
+  margin: 10px auto;
+  font-family: Fira Code;
+}
+
+.box {
+  position: relative;
+}
+
+.image2 {
+  width: 400px;
+  margin: 10px;
+  padding: 10px;
+  transition: 2s;
+  box-shadow: 10px 10px 25px rgb(221, 219, 209);
+  position: relative;
+}
+
+
+
+.deleteButton {
+  position: absolute;
+  color: #fff;
+  font-size: 12px;
+}
+
+.profile-pic {
+  width: 200px;
+}
+
+#notLogged {
+  display: none;
+  position: absolute;
+  right: 17%;
+  top: 610px;
+  font-family: Fira Code;
+}

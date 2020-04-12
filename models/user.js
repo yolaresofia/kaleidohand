@@ -7,7 +7,9 @@ const userSchema = new Schema({
   password: String,
   website: String,
   city: String,
-  pictures: [{ type: Schema.Types.ObjectId, ref: 'Picture' }]
+  pictures: [{ type: Schema.Types.ObjectId, ref: 'Picture' }],
+  imgName: String, 
+  imgPath: String
 });
 
 userSchema.set('timestamps', true);

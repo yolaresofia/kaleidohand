@@ -1,7 +1,7 @@
    <div class="Content">
    <section class="personalSection">
        <header class="personalHeader" id="profileHeader">
-           <img src="" class="" alt="avatar">
+           <img src="{{user1.imgPath}}" class="profile-pic" alt="">
            <h1 class="">{{user1.name}}</h1>
            <h2 class="">{{user1.city}}</h2>
            <h2 class="">{{user1.website}}</h2>
@@ -10,9 +10,8 @@
        <div class="images-profile">
            {{#each pictures}}
            <img src="{{this.data.image}}" class="image" alt="">
-           </form>
            {{else}}
-           <p class="f5 f4-ns fw6 dark-gray">There aren't pictures yet!</p>
+           <p class="f5 f4-ns fw6 dark-gray">You have no pictures yet!</p>
            {{/each}}
        </div>
    </section>

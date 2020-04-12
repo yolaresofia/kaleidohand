@@ -1,25 +1,25 @@
-<div class="bg-lightest-blue header-top tc ph5-l ph4-m ph3-ns pt5 pb4">
-    <form action="/personal/{{currentUserInfo._id}}/edit" method='POST'>
-    <img src="" class="br-100 pa1 ba b--black-10 h4 w4" alt="avatar">
-    <label for="name" class="f5 f4-ns fw6 dark-gray">Name</label><br>
-    <input type="text" id="name" name="name" value="{{currentUserInfo.name}}"><br>
-    <label for="city" class="f6 dark-gray fw2 ttu tracked mt2">City</label><br>
-    <input type="text" id="city" name="city" value="{{currentUserInfo.city}}"><br>
-    <label for="website" class="f6 dark-gray fw2 ttu tracked mt2">Website</label><br>
-    <input type="text" id="website" name="website" value="{{currentUserInfo.website}}"><br>
-    <button type="submit">Save</button>
-
-    </form>
-</div>
-<div class="ph5-l ph4-m ph3-ns pa4 columns">
-    <div class="col mb1">
-        {{#each pictures}}
-        <img class="br2" src="{{this.data.image}}" class="image" alt="">
-        <form action="/personal/{{id}}/delete" method="POST">
-            <button type="submit"> Delete </button>
+<div class="Content">
+    <section class="personalSection">
+        <form class="personalHeader2" id="profileHeader" action="/personal/{{user1._id}}/edit" enctype="multipart/form-data" method='POST'>
+            <img src="{{user1.imgPath}}" class="profile-pic" alt="avatar">
+            <input type="file" name="photo">
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name" value="{{user1.name}}"><br>
+            <label for="city">City</label><br>
+            <input type="text" id="city" name="city" value="{{user1.city}}"><br>
+            <label for="website">Website</label><br>
+            <input type="text" id="website" name="website" value="{{user1.website}}"><br>
+            <button type="submit" class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f5">Save</button>
         </form>
-        {{else}}
-        <p class="f5 f4-ns fw6 dark-gray">There aren't pictures yet!</p>
-        {{/each}}
-    </div>
+        <div class="images-profile">
+            {{#each pictures}}
+            <img src="{{this.data.image}}" class="image2" alt="">
+            <form action="/personal/{{id}}/delete" method="POST">
+                <button type="submit" class="deleteButton">X</button>
+            </form>
+            {{else}}
+            <p class="f5 f4-ns fw6 dark-gray">You have no pictures yet!</p>
+            {{/each}}
+        </div>
 </div>
+</section>

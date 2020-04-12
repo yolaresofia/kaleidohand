@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const Picture = require('../models/picture.js');
 const User = require('../models/user');
-
+const uploadCloud = require('../config/cloudinary.js')
 
 router.use((req, res, next) => {
   if (req.session.currentUser) {
@@ -15,7 +15,9 @@ router.use((req, res, next) => {
 
 
 router.get('/profile', function (req, res, next) {
-  let query = { user: req.session.currentUser._id }
+  let query = {
+    user: req.session.currentUser._id
+  }
   let user1;
   User.findById(req.session.currentUser._id)
     .then(user => user1 = user)
@@ -29,42 +31,56 @@ router.get('/profile', function (req, res, next) {
 
 
 router.get('/edit', function (req, res, next) {
-  let query = { user: req.session.currentUser._id }
+  let query = {
+    user: req.session.currentUser._id
+  }
   let user1;
   User.findById(req.session.currentUser._id)
-  .then(user => user1 = user)
-Picture.find(query)
-  .then(pictures => res.render('personal/edit', {
-    pictures,
-    user1
-  }))
-  .catch(error => console.log(error));
+    .then(user => user1 = user)
+  Picture.find(query)
+    .then(pictures => res.render('personal/edit', {
+      pictures,
+      user1
+    }))
+    .catch(error => console.log(error));
 });
 
-router.post('/:id/delete', (req, res, next) => {
-  Picture.findByIdAndDelete(req.params.id)
-    .then(() => {
-      res.redirect('/personal/profile');
-    })
+router.post('/:id/delete', async (req, res, next) => {
+  let query = {
+    user: req.session.currentUser._id
+  }
+  let user1;
+  await Picture.findByIdAndDelete(req.params.id)
+  await User.findById(req.session.currentUser._id)
+    .then(user => user1 = user)
+  Picture.find(query)
+    .then(pictures => res.render('personal/edit', {
+      pictures,
+      user1
+    }))
     .catch(error => {
       console.log('Error while deleting', error);
     })
 })
 
 
-router.post('/:id/edit', (req, res, next) => {
+router.post('/:id/edit', uploadCloud.single('photo'), (req, res, next) => {
   const {
     name,
     city,
     website
   } = req.body;
+  const imgPath = req.file.url;
+  const imgName = req.file.originalname;
   User.updateOne({
       _id: req.params.id
     }, {
       $set: {
         name,
         city,
-        website
+        website,
+        imgPath,
+        imgName
       }
     })
     .then(() => {
