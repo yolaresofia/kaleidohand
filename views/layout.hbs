@@ -9,10 +9,12 @@
 
 <body>
   <div>
+
     <ul class="menu">
       <li><a href="/gallery" class='archive'>CONNECT</a></li>
       <li><a href="/main" class='play'>PLAYDRAWEXPERIMENT</a></li>
       <li><a href="#" class='about'>ABOUT</a></li>
+
       {{#if isUserLoggedIn}}
       <li><a class="profile" href="/personal/profile">{{currentUserInfo.name}}</a></li>
       <li><a class="logout" href="/auth/logout">LOGOUT</a></li>
@@ -21,6 +23,7 @@
       <li><a class="signup" href="/auth/signup">SIGNUP</a></li>
       {{/if}}
     </ul>
+
     <div class="transition-wipe overlay"></div>
   </div>
   <div id="swap" class="transition-fade">
