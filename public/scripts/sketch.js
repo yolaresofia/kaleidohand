@@ -59,7 +59,6 @@ function setup(){
     strokeB.style('width', '80px');
     strokeB.parent("#knobs")
 
-    background(255)
 }
 
 function modelReady() {
@@ -138,6 +137,7 @@ function handleSubmit(e){
     fetch('/api', options)
     .then(() => { appendSucces()})
     .catch(err => console.log(err));
+
 }
 
 function appendSucces(){
@@ -147,8 +147,8 @@ function appendSucces(){
     succededDiv.parent("#knobs")
     let notLoggedIn = select('#notLogged')
     notLoggedIn.style('display','inline')
-}
 
+}
 
 
 

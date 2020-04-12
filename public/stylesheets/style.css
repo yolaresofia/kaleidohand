@@ -207,7 +207,9 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .saveButton {
+
   margin-top: 30px;
+
   color: black;
   width: 100px;
 }
@@ -260,8 +262,10 @@ a:link {
   text-decoration: none;
 }
 
+
 li {
   list-style-type: none;
+
 }
 
 .overlay {
@@ -361,15 +365,18 @@ html.is-animating .transition-fade {
   opacity: 0;
 }
 
+
 .fade-in {
   animation: fadeIn 1s;
 }
+
 
 @keyframes fadeIn {
   from {
     transform: scale(1.02);
     opacity: 0;
   }
+
 
   to {
     transform: scale(1);
@@ -426,3 +433,4 @@ html.is-animating .transition-fade {
   float: right;
   width: 70%;
 } 
+
