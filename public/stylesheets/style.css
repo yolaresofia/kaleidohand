@@ -160,7 +160,7 @@ input[type=range]:focus::-ms-fill-upper {
   font-family: Helvetica;
   font-weight: 100;
   font-family: Fira Code;
-  width: 50%;
+  width: 55%;
   position: absolute;
   line-height: 1.7em;
   letter-spacing: 0.5px;
@@ -223,7 +223,7 @@ input[type=range]:focus::-ms-fill-upper {
   margin: 0 auto;
 }
 
-.image {
+.imagesInGallery {
   width: 300px;
   margin: 10px;
   padding: 10px;
@@ -231,7 +231,7 @@ input[type=range]:focus::-ms-fill-upper {
   box-shadow: 10px 10px 25px rgb(221, 219, 209);
 }
 
-.image:hover {
+.imagesInGallery:hover {
   width: 350px;
 }
 
@@ -383,17 +383,33 @@ html.is-animating .transition-fade {
 
 /* profile */
 
+.image {
+  width: 400px;
+  margin: 10px;
+  padding: 10px;
+  transition: 2s;
+  box-shadow: 10px 10px 25px rgb(221, 219, 209);
+}
+
+.image:hover {
+  width: 350px;
+}
+
 .personalSection{
   display: flex;
   flex-direction: row;
+  margin-top: 50px;
 }
+
 .personalHeader{
   display: flex;
   position: fixed;
-  width:50%;
+  width:40%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
+  margin-left: 3%;
 }
 
 .personalHeader *{
@@ -401,13 +417,12 @@ html.is-animating .transition-fade {
   margin: 10px auto;
   font-family: Fira Code;
 }
+
 .images-profile{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 30px auto;
-  margin: 30px auto;
-  overflow: auto;
+  margin-left: 40%;
   float: right;
-  width: 50%;
+  width: 70%;
 } 
