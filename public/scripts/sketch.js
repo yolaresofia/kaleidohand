@@ -45,7 +45,7 @@ function setup(){
     sliderSymmetry.parent("#knobs")
     sliderSymmetry.class('input');
     //size
-    strokeSize = createSlider(2, 40, 10, 1)
+    strokeSize = createSlider(2, 40, 5, 1)
     strokeSize.style('width', '80px');
     strokeSize.parent("#knobs")
 

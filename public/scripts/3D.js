@@ -15,10 +15,14 @@ function setup() {
   textFont(font);
   textAlign(CENTER, BASELINE);
   canvas.position(0, 0);
-  canvas.style('z-index', '1');
+  canvas.id('canvas3d')
+  canvas.style('z-index', '-1');
   menu = select('.menu')
   menu.style('display', 'none');
 }
+
+
+
 function draw() {
   smooth()
     let time = millis();

@@ -172,6 +172,15 @@ input[type=range]:focus::-ms-fill-upper {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+  z-index: 2;
+}
+
+
+#canvas3d {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 /*main page*/
@@ -530,3 +539,15 @@ html.is-animating .transition-fade {
   font-size: 1.2em;
   border-bottom: 1.5px solid black;
 }
+
+/* about */
+
+.ruido{
+  height: 100vh;
+  width:100vw;
+  opacity: 0.3;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  }
