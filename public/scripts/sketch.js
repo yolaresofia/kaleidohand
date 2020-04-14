@@ -50,15 +50,15 @@ function setup(){
     strokeSize.parent("#knobs")
 
     //R
-    strokeR = createSlider(0, 250, 100, 1)
+    strokeR = createSlider(0, 250, 255, 1)
     strokeR.style('width', '80px');
     strokeR.parent("#knobs")
     //G
-    strokeG = createSlider(0, 250, 10, 1)
+    strokeG = createSlider(0, 250, 0, 1)
     strokeG.style('width', '80px');
     strokeG.parent("#knobs")
     //B
-    strokeB = createSlider(0, 250, 50, 1)
+    strokeB = createSlider(0, 250, 255, 1)
     strokeB.style('width', '80px');
     strokeB.parent("#knobs")
     background(255)

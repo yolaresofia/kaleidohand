@@ -50,8 +50,8 @@ router.get('/profiles/:id', function (req, res, next) {
   Picture.find({user: req.params.id})
     .populate('user')
     .then(pictures => { 
-      let {name, website, city, email} = pictures[0].user;
-      res.render('profiles', { pictures, name, email, city, website })
+      let {name, website, city, email, imgPath} = pictures[0].user;
+      res.render('profiles', { pictures, name, email, city, website, imgPath })
     })
     .catch(error => console.log(error));
 });

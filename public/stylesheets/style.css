@@ -219,22 +219,19 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 /*gallery*/
-.images-gallery {
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
+
 
 .imagesInGallery {
-  width: 300px;
+  width: 290px;
   margin: 10px;
-  padding: 10px;
+  padding: 25px 25px 65px;
   transition: 2s;
   box-shadow: 10px 10px 25px rgb(221, 219, 209);
 }
 
 .imagesInGallery:hover {
-  width: 350px;
+  width: 320px;
+  background: rgb(240, 240, 240);
 }
 
 .title-archive {
@@ -254,8 +251,7 @@ input[type=range]:focus::-ms-fill-upper {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-flow: column;
-  margin-left: 120px;
+  flex-wrap: wrap;
 }
 
 a:link {
@@ -268,6 +264,7 @@ li {
   list-style-type: none;
 
 }
+
 
 .overlay {
   position: absolute;
@@ -419,6 +416,15 @@ html.is-animating .transition-fade {
   margin-left: 3%;
 }
 
+.profile-avatar {
+  object-fit: cover;
+  object-position: 100% 50;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid grey;
+}
+
 .personalHeader * {
   padding: 10px;
   margin: 10px auto;
@@ -508,13 +514,14 @@ html.is-animating .transition-fade {
 .image-single-piece {
   width: 450px;
   margin: 10px;
-  padding: 10px;
+  padding: 25px 25px 65px;
   transition: 2s;
   box-shadow: 10px 10px 25px rgb(221, 219, 209);
 }
 
 .image-single-piece:hover {
   width: 480px;
+  background-color: rgb(240, 240, 240);
 }
 
 .you-have-no {
