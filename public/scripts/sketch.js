@@ -149,7 +149,7 @@ function appendSucces(){
     }, 2000);
     
     succededDiv = createDiv('Created!')
-    succededDiv.style('background-color','pink')
+    succededDiv.class('succededDiv')
     succededDiv.style('width','50px')
     succededDiv.parent("#knobs")
     let notLoggedIn = select('#notLogged')

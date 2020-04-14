@@ -177,7 +177,7 @@ input[type=range]:focus::-ms-fill-upper {
 /*main page*/
 .main-page {
   display: flex;
-  margin-top: 50px;
+  margin-top: 40px;
   flex-flow: row;
   align-items: center;
   justify-content: space-around;
@@ -208,7 +208,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .saveButton {
 
-  margin-top: 30px;
+  margin-top: 40px;
 
   color: black;
   width: 100px;
@@ -246,7 +246,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .title-archive:hover {
-  color: #a78e78;
+  color:#f93b20;
 
 }
 
@@ -260,6 +260,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 a:link {
   text-decoration: none;
+
 }
 
 
@@ -446,8 +447,8 @@ html.is-animating .transition-fade {
 }
 
 .personalHeader2 * {
-  padding: 4px;
-  margin: 10px auto;
+  padding: 7px;
+  margin: 6px auto;
   font-family: Fira Code;
 }
 
@@ -463,8 +464,6 @@ html.is-animating .transition-fade {
   box-shadow: 10px 10px 25px rgb(221, 219, 209);
   position: relative;
 }
-
-
 
 .deleteButton {
   position: absolute;
@@ -482,4 +481,45 @@ html.is-animating .transition-fade {
   right: 17%;
   top: 610px;
   font-family: Fira Code;
+}
+
+.succededDiv{
+  position: absolute;
+  right: 20%;
+  top: 620px;
+  font-family: Fira Code;
+}
+
+.single-piece {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.created {
+  margin-top: 15px;
+  font-family: Fira Code;
+  font-size: 1em;
+  border-bottom: 1.5px solid black;
+}
+
+.image-single-piece {
+  width: 450px;
+  margin: 10px;
+  padding: 10px;
+  transition: 2s;
+  box-shadow: 10px 10px 25px rgb(221, 219, 209);
+}
+
+.image-single-piece:hover {
+  width: 480px;
+}
+
+.you-have-no {
+  margin-top: 30%;
+  font-family: Fira Code;
+  font-size: 1.2em;
+  border-bottom: 1.5px solid black;
 }

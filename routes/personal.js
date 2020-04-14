@@ -65,13 +65,20 @@ router.post('/:id/delete', async (req, res, next) => {
 
 
 router.post('/:id/edit', uploadCloud.single('photo'), (req, res, next) => {
+  let imgPath;
+  let imgName;
   const {
     name,
     city,
     website
   } = req.body;
-  const imgPath = req.file.url;
-  const imgName = req.file.originalname;
+  if(req.file !== undefined) {
+    imgPath = req.file.url;
+    imgName = req.file.originalname;
+  } else {
+    imgPath = req.session.currentUser.imgPath;
+    imgName = req.session.currentUser.imgName;
+  }
   User.updateOne({
       _id: req.params.id
     }, {
