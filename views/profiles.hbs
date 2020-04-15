@@ -6,6 +6,10 @@
                   <h2 class="">{{city}}</h2>
                   <h2 class="">{{website}}</h2>
                   <h2 class="">{{email}}</h2>
+                  <form action="/personal/message-to/{{userId}}" method="POST">
+                      <input type="text" name="message" id="">
+                      <button type="submit">Send Message</button>
+                  </form>
               </header>
               <div class="images-profile">
                   {{#each pictures}}

@@ -1,8 +1,9 @@
 <div class="fade-in">
-    <h1 class="title-archive">ARCHIVE</h1>
+    <h1 class="title-archive">Connect</h1>
+    <p></p>
     <div class='container-archive'>
             {{#each pictures}}
-            <a href="/gallery/{{this._id}}"><img src="{{this.data.image}}" class="imagesInGallery" alt=""></a>
+            <a href="/connect/{{this._id}}"><img src="{{this.data.image}}" class="imagesInGallery" alt=""></a>
             {{else}}
             <p>There aren't pictures yet!</p>
             {{/each}}

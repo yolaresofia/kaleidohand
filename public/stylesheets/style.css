@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
 
 * {
   margin: 0px;
@@ -25,13 +26,11 @@ ul li a {
   font-family: Fira Code;
   font-weight: bold;
   letter-spacing: 2px;
-  margin: 0.5%;
+  margin: 15px;
   background-color: transparent;
   font-size: 15px;
-  padding: 1%;
   text-align: center;
   width: 15%;
-  margin-right: 30px;
   transition: width 0.8s ease 0.3s, font-size 0.8s ease 0.3s;
 }
 
@@ -161,7 +160,6 @@ input[type=range]:focus::-ms-fill-upper {
 /* home */
 
 .threeDp {
-  font-family: Helvetica;
   font-weight: 100;
   font-family: Fira Code;
   width: 55%;
@@ -200,31 +198,32 @@ input[type=range]:focus::-ms-fill-upper {
 .name-use {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10%;
+  margin-left: 4%;
 }
 
 .title {
-  font-family: Bungee Hairline;
+  font-family: Gotu;
   color: black;
-  font-size: 5em;
-  margin: 0 auto;
-  line-height: 1.2em;
-  text-align: right;
+  font-size: 5.5em;
+  line-height: 1.1em;
 }
 
 .sketch-button {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  text-align: center;
   align-items: center;
+  margin-top: 2%;
 }
 
 .saveButton {
-
   margin-top: 40px;
-
   color: black;
   width: 100px;
+  font-family: Fira Code;
 }
 
 #knobs {
@@ -249,15 +248,15 @@ input[type=range]:focus::-ms-fill-upper {
 
 .title-archive {
   color: #000000;
-  margin: 30px auto;
   text-align: center;
-  font-family: Fira Code;
+  margin-top: 10%;
+  font-size: 3em;
+  font-family: Gotu;
   transition: 1s;
 }
 
 .title-archive:hover {
   color:#f93b20;
-
 }
 
 .container-archive {
@@ -282,7 +281,7 @@ li {
 .overlay {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 10000%;
   top: 0;
   z-index: 10;
   left: 0;
@@ -404,13 +403,14 @@ html.is-animating .transition-fade {
 .image {
   width: 400px;
   margin: 10px;
-  padding: 10px;
+  padding: 25px 25px 65px;
   transition: 2s;
   box-shadow: 10px 10px 25px rgb(221, 219, 209);
 }
 
 .image:hover {
   width: 450px;
+  background: rgb(240, 240, 240);
 }
 
 .personalSection {
@@ -418,6 +418,7 @@ html.is-animating .transition-fade {
   flex-direction: row;
   margin-top: 50px;
 }
+
 
 .personalHeader {
   display: flex;
@@ -432,15 +433,15 @@ html.is-animating .transition-fade {
 .profile-avatar {
   object-fit: cover;
   object-position: 100% 50;
-  width: 200px;
-  height: 200px;
+  width: 165px;
+  height: 165px;
   border-radius: 50%;
   border: 1px solid grey;
 }
 
 .personalHeader * {
   padding: 10px;
-  margin: 10px auto;
+  margin: 5px auto;
   font-family: Fira Code;
 }
 
@@ -486,12 +487,18 @@ html.is-animating .transition-fade {
 
 .deleteButton {
   position: absolute;
-  color: #fff;
-  font-size: 12px;
+  color:#f93b20;
+  font-family: Fira Code;
+  transition: 0.5s;
+}
+
+.deleteButton:hover {
+  color: white;
+  background-color:#f93b20;
 }
 
 .profile-pic {
-  width: 200px;
+  width: 150px;
 }
 
 #notLogged {
@@ -518,7 +525,6 @@ html.is-animating .transition-fade {
 }
 
 .created {
-  margin-top: 15px;
   font-family: Fira Code;
   font-size: 1em;
   border-bottom: 1.5px solid black;

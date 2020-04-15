@@ -16,10 +16,10 @@ router.get('/about', function (req, res, next) {
   res.render('about');
 });
 
-router.get('/gallery', function (req, res, next) {
+router.get('/connect', function (req, res, next) {
   Picture.find()
     .then(pictures => {
-      res.render('gallery', {
+      res.render('connect', {
         pictures
       });
     })
@@ -51,17 +51,19 @@ router.post("/api", (req, res) => {
 })
 
 router.get('/profiles/:id', function (req, res, next) {
+  let userId = req.params.id;
   Picture.find({user: req.params.id})
     .populate('user')
     .then(pictures => { 
       let {name, website, city, email, imgPath} = pictures[0].user;
-      res.render('profiles', { pictures, name, email, city, website, imgPath })
+      res.render('profiles', { pictures, name, email, city, website, imgPath, userId})
     })
     .catch(error => console.log(error));
 });
 
 
-router.get('/gallery/:id', (req, res, next) => {
+
+router.get('/connect/:id', (req, res, next) => {
     Picture.findById(req.params.id)
     .populate('user', 'name')
     .then(picture => {

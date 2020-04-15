@@ -1,0 +1,10 @@
+<h1>Messages</h1>
+
+<div>
+    {{#each messages}}
+    <h5>from {{from.name}}</h5>
+    <p>{{message}}</p>
+    {{else}}
+    <h1>You have no messages!</h1>
+    {{/each}}
+</div>

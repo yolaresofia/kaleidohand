@@ -24,7 +24,8 @@ let succededDiv
 
 function setup(){
 
-
+    
+    
     cnv = createCanvas(500, 500).parent("#mySketch");
     angleMode(DEGREES);
     video = createCapture(VIDEO);
@@ -32,36 +33,62 @@ function setup(){
     poseNet.on('pose', gotPoses);
     video.size(width, height);
     video.hide()
-   
+    
     pixelDensity(1);
-
+    
     submitButton = select("#submitButton");
     submitButton.mousePressed(handleSubmit);
     knob = select('#knob')
+    
 
     //symmetry
     sliderSymmetry = createSlider(4, 12, 6, 1)
     sliderSymmetry.style('width', '80px');
     sliderSymmetry.parent("#knobs")
     sliderSymmetry.class('input');
+    //sliderSymmetry.id('symmetry')
+
     //size
     strokeSize = createSlider(2, 40, 5, 1)
     strokeSize.style('width', '80px');
     strokeSize.parent("#knobs")
+    //strokeSize.id('size')
 
     //R
     strokeR = createSlider(0, 250, 255, 1)
     strokeR.style('width', '80px');
     strokeR.parent("#knobs")
+    //strokeR.id('red')
+
     //G
     strokeG = createSlider(0, 250, 0, 1)
     strokeG.style('width', '80px');
     strokeG.parent("#knobs")
+    //strokeG.id('green')
+
     //B
     strokeB = createSlider(0, 250, 255, 1)
     strokeB.style('width', '80px');
     strokeB.parent("#knobs")
+    //strokeB.class('blue')
+
     background(255)
+
+    //knobs descriptions
+    //red
+    //descriptionR.parent('#red')
+    //descriptionRed = createP('cacacacacacaca');
+
+    //green
+    //descriptionGreen = createP('green');
+    //descriptionRed.parent('#green')
+
+    //descriptionBlue = createP('blue');
+    //descriptionRed.parent('blue')
+
+    //descriptionSize = createP('size');
+
+    //descriptionSymmetry = createP('symmetry');
 }
 
 function modelReady() {

@@ -2,7 +2,7 @@
     <section class="personalSection">
         <form class="personalHeader2" id="profileHeader" action="/personal/{{user1._id}}/edit" enctype="multipart/form-data" method='POST'>
             <img src="{{user1.imgPath}}" class="profile-avatar" alt="avatar">
-            <input type="file" name="photo">
+            <input type="file" class="" name="photo" placeholder=" ">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" value="{{user1.name}}">
             <label for="city">City</label>
@@ -15,7 +15,7 @@
             {{#each pictures}}
             <img src="{{this.data.image}}" class="image2" alt="">
             <form action="/personal/{{id}}/delete" method="POST">
-                <button type="submit" class="deleteButton">X</button>
+                <button type="submit" class="deleteButton b ph2 pv2 ba b--orange grow pointer f6">delete</button>
             </form>
             {{else}}
             <p class="you-have-no">You have no pictures yet!</p>

@@ -3,8 +3,10 @@ const express = require('express');
 const router = express.Router();
 const Picture = require('../models/picture.js');
 const User = require('../models/user');
+const Message = require('../models/message');
 const uploadCloud = require('../config/cloudinary.js')
 
+//middleware checks if you're logged in
 router.use((req, res, next) => {
   if (req.session.currentUser) {
     next();
@@ -13,6 +15,16 @@ router.use((req, res, next) => {
   res.redirect('/auth/login');
 });
 
+router.get('/messages', function (req, res, next) {
+  let query = {
+    to: req.session.currentUser._id
+  }
+
+  Message.find(query)
+    .populate('from')
+    .then(messages => res.render('personal/messages', {messages}))
+    .catch(error => console.log(error))
+});
 
 router.get('/profile', function (req, res, next) {
   let query = {
@@ -61,6 +73,23 @@ router.post('/:id/delete', async (req, res, next) => {
     .catch(error => {
       console.log('Error while deleting', error);
     })
+})
+
+router.post('/message-to/:userId', (req, res, next) => {
+  let from = req.session.currentUser._id
+  let message = req.body.message
+  let to = req.params.userId
+  Message.create({
+    from: from,
+    to: to,
+    message: message
+  })
+  .then(() => {
+    res.redirect(`/profiles/${to}`)
+  })
+  .catch(() => {
+    console.log('Error sending the message', error);
+  })
 })
 
 
