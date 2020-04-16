@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Giga&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap');
 
 * {
   margin: 0px;
@@ -28,7 +29,6 @@ ul li a {
   letter-spacing: 2px;
   margin: 15px;
   background-color: transparent;
-  font-size: 15px;
   text-align: center;
   width: 15%;
   transition: width 0.8s ease 0.3s, font-size 0.8s ease 0.3s;
@@ -36,14 +36,11 @@ ul li a {
 
 li {
   z-index: 3;
+  font-size: 0.7em;
 }
 
 
 ul li a:hover {
-  /* margin-right: 40px; */
-  /* transform: rotate(-180deg); */
-  font-size: 16px;
-  width: 23%;
   border-bottom: 2px solid black;
 }
 
@@ -186,9 +183,10 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 /*main page*/
+
 .main-page {
   display: flex;
-  margin-top: 40px;
+  margin-top: 20px;
   flex-flow: row;
   align-items: center;
   justify-content: space-around;
@@ -205,11 +203,40 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .title {
-  font-family: Gotu;
+  font-family: Manrope;
   color: black;
   font-size: 5.5em;
   line-height: 1.1em;
 }
+
+.orangeCircle {
+  position: absolute;
+  transform: translate(-50%, 10%);
+  z-index: -1;
+  height: 50%;
+}
+
+.circlepink {
+  position: absolute;
+  transform: translate(30%, 10%);
+  z-index: -1;
+  height: 50%;
+}
+
+.circleVlt {
+  position: absolute;
+  transform: translate(90%, 50%);
+  z-index: -1;
+  height: 50%;
+}
+
+.roseBg {
+  position: absolute;
+  transform: translate(20%, -10%);
+  z-index: -1;
+  height: 60%;
+}
+
 
 .sketch-button {
   display: flex;
@@ -217,6 +244,7 @@ input[type=range]:focus::-ms-fill-upper {
   justify-content: center;
   align-items: center;
   margin-top: 2%;
+  margin-left: 10%;
 }
 
 .saveButton {
@@ -232,31 +260,63 @@ input[type=range]:focus::-ms-fill-upper {
 
 /*gallery*/
 
+.container-title-p-connect {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: row;
+}
+
+.text-gallery {
+  margin-top: 70%;
+  margin-left: 15%;
+  font-family: Manrope;
+  font-weight: 400;
+  font-size: 1.1em;
+  width: 80%;
+  text-align: right;
+}
+
+.square {
+  height: 500px;
+  width: 400px;
+  border: 3px solid black;
+  margin-top: 7%;
+  margin-left: -10%;
+}
+
+.title-archive {
+  color: black;
+  margin-top: 17%;
+  margin-left: 15%;
+  font-size: 6em;
+  font-family: Manrope;
+  transition: 1s;
+}
+
+.orangeBackground {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  height: 100vh;
+}
 
 .imagesInGallery {
   width: 290px;
   margin: 10px;
   padding: 25px 25px 65px;
   transition: 2s;
-  box-shadow: 10px 10px 25px rgb(221, 219, 209);
+  box-shadow: 1px 1px 10px rgb(240, 235, 227);
 }
 
 .imagesInGallery:hover {
-  width: 320px;
-  background: rgb(240, 240, 240);
-}
-
-.title-archive {
-  color: #000000;
-  text-align: center;
-  margin-top: 10%;
-  font-size: 3em;
-  font-family: Gotu;
-  transition: 1s;
+  width: 310px;
+  background: rgb(240, 235, 235);
 }
 
 .title-archive:hover {
-  color:#f93b20;
+  color: purple;
 }
 
 .container-archive {
@@ -394,8 +454,45 @@ html.is-animating .transition-fade {
   }
 }
 
+.figMain {
+  animation: showUp 2s
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+  }
+
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* log-in-sign-up */
+
 .forms {
-  font-family: Helvetica;
+  font-family: Fira Code;
+  font-weight: 600;
+}
+
+.orangeBackgroundLogin {
+  position: absolute;
+  z-index: -1;
+  height: 70%;
+  width: 50%;
+  /* left: 50%; */
+  transform: translate(10%, 5%);
+}
+
+.orangeBackgroundSignup {
+  position: absolute;
+  z-index: -1;
+  height: 70%;
+  width: 50%;
+  /* left: 50%; */
+  transform: translate(80%, 5%);
 }
 
 /* profile */
@@ -487,14 +584,14 @@ html.is-animating .transition-fade {
 
 .deleteButton {
   position: absolute;
-  color:#f93b20;
+  color: #f93b20;
   font-family: Fira Code;
   transition: 0.5s;
 }
 
 .deleteButton:hover {
   color: white;
-  background-color:#f93b20;
+  background-color: #f93b20;
 }
 
 .profile-pic {
@@ -509,7 +606,7 @@ html.is-animating .transition-fade {
   font-family: Fira Code;
 }
 
-.succededDiv{
+.succededDiv {
   position: absolute;
   right: 20%;
   top: 620px;
@@ -552,38 +649,38 @@ html.is-animating .transition-fade {
 
 /* about */
 
-.ruido{
+.ruido {
   height: 100vh;
-  width:100vw;
+  width: 100vw;
   opacity: 0.3;
   z-index: 1;
   position: absolute;
   left: 0;
   top: 0;
-  }
+}
 
-  .about-text {
-  width: 75%;
+.about-text {
+  width: 60%;
   position: absolute;
   top: 53%;
   justify-content: center;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  }
+}
 
-  .about-text p{
-    font-weight: bold;
-    font-family: Fira Code;
-    line-height: 1.5em;
-    letter-spacing: 0.5px;
-    font-size: 15px;
-    text-align: center;
-    color: white;
-    margin-top: 20px;
-  }
+.about-text p {
+  font-weight: bold;
+  font-family: Manrope;
+  line-height: 1.6em;
+  letter-spacing: 0.6px;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+}
 
-  .about-text p a {
-    color: white;
-    border-bottom: 2px solid white;
-  }
+.about-text p a {
+  color: white;
+  border-bottom: 2px solid white;
+}

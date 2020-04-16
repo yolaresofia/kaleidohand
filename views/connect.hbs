@@ -1,6 +1,12 @@
 <div class="fade-in">
+    <div class="container-title-p-connect">
+        <img src="/resources/fondoMain.jpg" class="orangeBackground" alt="">
+        <img src="/resources/circlepink.png" class="circlepink" alt="">
     <h1 class="title-archive">Connect</h1>
-    <p></p>
+    <div class="square">
+    <p class="text-gallery">Connect with people from all over the world.</p>
+    </div>
+    </div>
     <div class='container-archive'>
             {{#each pictures}}
             <a href="/connect/{{this._id}}"><img src="{{this.data.image}}" class="imagesInGallery" alt=""></a>
@@ -11,4 +17,7 @@
     </div>
     
 </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+<script src="/scripts/auth-background.js"></script>
 
