@@ -136,7 +136,6 @@ function drawKeypoints() {
             rotate(angle);
             stroke(strokeR.value(), strokeG.value(), strokeB.value())
             strokeWeight(random(strokeSize.value()));
-
             line(mx, my, pmx, pmy);
             push();
             scale(1, -1);
